@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/eventify/static/css/main.a617e044.chunk.css",
-    "main.js": "/eventify/static/js/main.0307eb70.chunk.js",
-    "main.js.map": "/eventify/static/js/main.0307eb70.chunk.js.map",
+    "main.js": "/eventify/static/js/main.1b3c67b1.chunk.js",
+    "main.js.map": "/eventify/static/js/main.1b3c67b1.chunk.js.map",
     "runtime-main.js": "/eventify/static/js/runtime-main.0344f9f8.js",
     "runtime-main.js.map": "/eventify/static/js/runtime-main.0344f9f8.js.map",
     "static/js/2.25e2cc17.chunk.js": "/eventify/static/js/2.25e2cc17.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.0344f9f8.js",
     "static/js/2.25e2cc17.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.0307eb70.chunk.js"
+    "static/js/main.1b3c67b1.chunk.js"
   ]
 }
