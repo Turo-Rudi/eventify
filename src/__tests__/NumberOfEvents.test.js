@@ -15,13 +15,13 @@ describe('<NumberOfevents/> component', () => {
     expect(NumberOfeventsWrapper.find(".eventNumber")).toHaveLength(1);
   });
   test('render text imput correctly', () => {
-    const eventToShow = NumberOfeventsWrapper.state("eventToShow");
-    expect(NumberOfeventsWrapper.find(".eventNumber").prop("value")).toBe(eventToShow);
+    const eventsToShow = NumberOfeventsWrapper.state("eventsToShow");
+    expect(NumberOfeventsWrapper.find(".eventNumber").prop("value")).toBe(eventsToShow);
   });
   test('change state when text input changes', () => {
-    NumberOfeventsWrapper.setState({ eventToShow: "32" });
+    NumberOfeventsWrapper.setState({ eventsToShow: "32" });
     const eventObject = { target: { value: "10" } };
     NumberOfeventsWrapper.find(".eventNumber").simulate("change", eventObject);
-    expect(NumberOfeventsWrapper.state("eventToShow")).toBe("10");
+    expect(NumberOfeventsWrapper.state("eventsToShow")).toBe("10");
   });
 });
