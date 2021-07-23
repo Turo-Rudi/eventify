@@ -15,7 +15,7 @@ class Event extends Component {
       <div className="event">
         <h1 className="eventName">{event.summary}</h1>
         <p className="eventLocation"><strong>Location: </strong>{event.location}</p>
-        <p className="eventDate"><strong>Timezone: </strong>{event.start.timeZone}</p>
+        <p className="eventZone"><strong>Timezone: </strong>{event.start.timeZone}</p>
         <p className="eventDate"><strong>Start: </strong>{event.start.dateTime}</p>
         <p className="eventDate"><strong>End: </strong>{event.end.dateTime}</p>
         {this.state.showHideDetails === true && (
