@@ -20,7 +20,7 @@ defineFeature(feature, test => {
     });
 
     then('default number of events should be shown', () => {
-      expect(AppWrapper.state('events').length).toBe(mockData.length);
+      expect(AppWrapper.state('events').length).toBe(32);
     });
   });
 
