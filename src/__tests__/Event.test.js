@@ -13,12 +13,12 @@ describe('<Event/> component', () => {
     expect(EventWrapper.find(".eventName")).toHaveLength(1);
   });
   test('render date and timezone of the event', () => {
-    expect(EventWrapper.find(".eventDate")).toHaveLength(1);
+    expect(EventWrapper.find(".eventDate")).toHaveLength(2);
   });
   test('render the location of the event', () => {
     expect(EventWrapper.find(".eventLocation")).toHaveLength(1);
   });
-  test('render details button', () => {
+  test('render show details button', () => {
     expect(EventWrapper.find(".showDetailsButton")).toHaveLength(1);
   });
   test('render event description on click', () => {
