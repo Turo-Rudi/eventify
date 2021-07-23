@@ -85,7 +85,8 @@ input[type="number"] {
   position: relative;
 }
 
-.details-btn {
+.showDetailsButton,
+.hideDetailsButton {
   position: absolute;
   right: 5px;
   bottom: 5px;
