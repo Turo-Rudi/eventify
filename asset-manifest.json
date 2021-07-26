@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/eventify/static/css/main.d26455c0.chunk.css",
-    "main.js": "/eventify/static/js/main.2dd89fea.chunk.js",
-    "main.js.map": "/eventify/static/js/main.2dd89fea.chunk.js.map",
+    "main.js": "/eventify/static/js/main.899fdcc9.chunk.js",
+    "main.js.map": "/eventify/static/js/main.899fdcc9.chunk.js.map",
     "runtime-main.js": "/eventify/static/js/runtime-main.501d2a94.js",
     "runtime-main.js.map": "/eventify/static/js/runtime-main.501d2a94.js.map",
-    "static/js/2.df79ae51.chunk.js": "/eventify/static/js/2.df79ae51.chunk.js",
-    "static/js/2.df79ae51.chunk.js.map": "/eventify/static/js/2.df79ae51.chunk.js.map",
+    "static/js/2.240207e7.chunk.js": "/eventify/static/js/2.240207e7.chunk.js",
+    "static/js/2.240207e7.chunk.js.map": "/eventify/static/js/2.240207e7.chunk.js.map",
     "static/js/3.e14922bf.chunk.js": "/eventify/static/js/3.e14922bf.chunk.js",
     "static/js/3.e14922bf.chunk.js.map": "/eventify/static/js/3.e14922bf.chunk.js.map",
     "index.html": "/eventify/index.html",
     "service-worker.js": "/eventify/service-worker.js",
     "service-worker.js.map": "/eventify/service-worker.js.map",
     "static/css/main.d26455c0.chunk.css.map": "/eventify/static/css/main.d26455c0.chunk.css.map",
-    "static/js/2.df79ae51.chunk.js.LICENSE.txt": "/eventify/static/js/2.df79ae51.chunk.js.LICENSE.txt"
+    "static/js/2.240207e7.chunk.js.LICENSE.txt": "/eventify/static/js/2.240207e7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.501d2a94.js",
-    "static/js/2.df79ae51.chunk.js",
+    "static/js/2.240207e7.chunk.js",
     "static/css/main.d26455c0.chunk.css",
-    "static/js/main.2dd89fea.chunk.js"
+    "static/js/main.899fdcc9.chunk.js"
   ]
 }
