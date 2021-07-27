@@ -11,6 +11,7 @@ export const extractLocations = (events) => {
 const removeQuery = () => {
   if (window.history.pushState && window.location.pathname) {
     var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.pushState("", "", newurl);
   } else {
     newurl = window.location.protocol + "//" + window.location.host;
     window.history.pushState("", "", newurl);
@@ -26,9 +27,9 @@ export const getEvents = async () => {
   }
 
   if (!navigator.onLine) {
-    const data = localStorage.getItem("lastEvents");
+    const events = localStorage.getItem("lastEvents");
     NProgress.done();
-    return data ? JSON.parse(Event).events : [];;
+    return events ? JSON.parse(events).events : [];
   }
 
   const token = await getAccessToken();
