@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents } from './api';
+import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import { WarningAlert } from './Alert';
+import WelcomeScreen from './WelcomeScreen';
 
 import './App.css';
 import './nprogress.css';
@@ -12,17 +14,34 @@ class App extends Component {
     events: [],
     locations: [],
     eventsToShow: "32",
-    currentCity: "all"
+    currentCity: "all",
+    warningText: "",
+    showWelcomeScreen: undefined
   }
 
-  componentDidMount() {
-    const { eventsToShow } = this.state;
+  async componentDidMount() {
     this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events: events.slice(0, eventsToShow), locations: extractLocations(events) });
-      }
-    });
+    const accessToken = localStorage.getItem('access_token');
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    if ((code || isTokenValid) && this.mounted) {
+      getEvents().then((events) => {
+        if (this.mounted) {
+          this.setState({ events, locations: extractLocations(events) });
+        }
+        if (!navigator.onLine) {
+          this.setState({
+            warningText: 'Looks like you are offline. The list of events are being loaded from the cache.'
+          });
+        } else {
+          this.setState({
+            warningText: ''
+          });
+        }
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -50,11 +69,15 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} NumberOfEvents={this.state.NumberOfEvents} />
         <NumberOfEvents updateNumberOfEvents={(e) => this.updateNumberOfEvents(e)} />
+        <WarningAlert text={this.state.warningText} />
         <EventList events={this.state.events} />
+        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
       </div>
     );
   }
